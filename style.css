@@ -1,0 +1,47 @@
+body.full-background {
+    background-color:#A2F5E0;
+}
+
+body {
+    margin-bottom:40px;
+}
+
+.white-text {
+    color:#FFF;
+}
+
+.small-container {
+    max-width:600px;
+}
+
+.margin-top-20 {
+    margin-top:20px;
+}
+
+.black-background {
+    background-color:#000;
+}
+
+#results-container {
+    display:none;
+}
+
+.radius-5 {
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+}
+
+.padding-20 {
+    padding:20px;
+}
+
+.btn {
+    background-color: #000;
+    color: #FFF;
+}
+
+.btn:hover {
+    background-color: #000;
+    color: #FFF;
+}

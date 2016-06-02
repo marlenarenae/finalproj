@@ -1,0 +1,78 @@
+body.full-background {
+	background-color:#A2F5E0;
+	background-size:auto;
+}
+
+.txt-center {
+	text-align:center;
+	color: #FFF;
+	font-family: arial;
+	font-weight: 1em;
+	text-transform: uppercase;
+}
+
+#search-input-box {
+	position:absolute;
+	top:30%;
+	left:50%;
+	margin-left:-200px;
+	margin-top:-200px;
+	width:400px;
+	height:200px;
+	float:right;
+	
+
+}
+
+
+.border-radius {
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+
+.margin-top-20 {
+	margin-top:20px;
+}
+
+.txt-right {
+	text-align:right;
+}
+
+input{
+	vertical-align: center;
+	margin-left: 25%;
+	width: 200px;
+
+}
+
+#spotify{
+	margin-top: 20%;
+	margin-left: 5%;
+}
+
+#results{
+	border: #000 2px solid;
+	position:absolute;
+	overflow:scroll;
+	top:30%;
+	left:35%;
+	width:400px;
+	height:400px;
+	background-color: #000;
+	color:#FFF;
+
+}
+audio {
+	margin-top: 10px;
+
+}
+
+.col-sm-4 {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+span {
+	font-size: 80%;
+}

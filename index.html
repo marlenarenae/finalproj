@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+​
+<head>
+	<title>Music Carousel</title>
+	<meta charset="utf8" />
+	 
+	<link rel="stylesheet" href="libraries/bootstrap/css/bootstrap.css" />
+     <!-- Font Awesome CSS -->
+
+	<link rel="stylesheet" href="style.css" />
+
+	<script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+	<script src="https://rawgit.com/arsood/handlejs/master/handle.js"></script>
+
+
+    <!-- Custom JavaScript -->
+    <script src="app.js"></script>
+   
+
+</head>
+​
+<body class="full-background">
+​
+<div id="container"></div>
+​
+<!--Search Page-->
+<div id="search-input-box" class="border-radius">
+	<h2 class="txt-center">Search for Music</h2>
+​
+	<div class="row">
+		<div class="col-sm-12">
+			<input id="song-title" class="form-control" type="text" placeholder="Search Song" />
+		</div>
+	</div>
+​
+	<div class="row">
+		<div class="col-sm-12 txt-center">
+			<button id="search-button" class="btn btn-primary margin-top-20">Search</button>
+			
+			
+		
+		</div>
+	</div>
+</div>
+<!--/Search Page-->
+
+<div id="song-container"></div>
+
+<!--Results-->
+​<!-- <script id="song-template" type="text/x-handlebars-template"> -->
+<div class="row">
+	<div class="col-sm-12 txt-center">
+	<div id="results" class="txt-center"><h3>Showing top 5 results for <span id='songID'></span></h3>
+
+		<div class="col-sm-8">
+				<h3 style="margin-top:0;"><span id='song-name'></span></h3>
+
+				<div class="row margin-top-20">
+					<div class="col-sm-4">
+						<strong >Title: </strong><span id='song-name-1'></span>
+					<div>
+						<strong >Artist: </strong><span id='artist-name-1'></span>
+					<div>
+						<strong >Album: </strong><span id='album-name-1'></span>
+					<div><audio controls>
+					  <source id="song-1" src="">
+					</div></div></audio>
+
+					<div class="col-sm-4">
+					<strong >Title: </strong><span id='song-name-2'></span>
+					<div>
+						<strong >Artist: </strong><span id='artist-name-2'></span>
+					
+					<div>
+						<strong >Album: </strong><span id='album-name-2'></span>
+					<div><audio controls>
+					  <source id="song-2" src="">
+					</div></div></audio>
+
+					<div class="col-sm-4">
+					<strong >Title: </strong><span id='song-name-3'></span>
+					<div>
+						<strong >Artist: </strong><span id='artist-name-3'></span>
+				
+					<div>
+						<strong >Album: </strong><span id='album-name-3'></span>
+					<div><audio controls>
+					  <source id="song-3" src="">
+					</div></div></audio>
+
+					<div class="col-sm-4">
+					<strong >Title: </strong><span id='song-name-4'></span>
+					<div>
+						<strong >Artist: </strong><span id='artist-name-4'></span>
+					
+					<div>
+						<strong >Album: </strong><span id='album-name-4'></span>
+				<div><audio controls>
+					  <source id="song-4" src="">
+					</div></div></audio>
+
+					<div class="col-sm-4">
+					<strong >Title: </strong><span id='song-name-5'></span>
+					<div>
+						<strong >Artist: </strong><span id='artist-name-5'></span>
+					
+					<div>
+						<strong >Album: </strong><span id='album-name-5'></span>
+					<div><audio controls>
+					  <source id="song-5" src="">
+					</div></div></audio>
+					
+					
+					  
+					</audio>
+					</div>				
+				</div>
+
+	
+			</div>
+		</div>
+	</div>
+​</div>
+
+
+</body>
+​
+</html>

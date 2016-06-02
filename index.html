@@ -16,6 +16,8 @@
 
         <script src="https://rawgit.com/arsood/handlejs/master/handle.js"></script>
 
+        <script src="https://connect.soundcloud.com/sdk/sdk-3.1.1.js"></script>
+
         <script src="app.js"></script>
     </head>
     <body class="full-background">
@@ -30,31 +32,62 @@
             <button id="search-submit" class="btn btn-primary" type="button">Search</button>
         </div>
 
-        <div id="results-container" class="container small-container margin-top-20 black-background radius-5">
-            <h3 class="white-text text-center">SHOWING TOP 5 RESULTS</h3>
-            <h5 id="display-for" class="white-text text-center"></h5>
+        <div id="results-container" class="container margin-top-20">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="black-background radius-5 padding-20">
+                        <h3 class="white-text text-center">SHOWING TOP 5 RESULTS</h3>
+                        <h5 class="white-text text-center display-for"></h5>
 
-            <div id="spotify-results">
-                <!--Single Result-->
-                <script id="spotify-template" type="text/x-handlebars-template">
-                    <div class="margin-top-20">
-                        <div class="white-text">
-                            TITLE: {{name}}
-                        </div>
-                        <div class="white-text">
-                            ARTIST: {{artists.[0].name}}
-                        </div>
-                        <div class="white-text">
-                            ALBUM: {{album.name}}
-                        </div>
-                        <div class="margin-top-20">
-                            <audio controls>
-                                <source src="{{preview_url}}" type="audio/mpeg">
-                            </audio>
+                        <div id="spotify-results">
+                            <!--Single Result-->
+                            <script id="spotify-template" type="text/x-handlebars-template">
+                                <div class="margin-top-20">
+                                    <div class="white-text">
+                                        TITLE: {{name}}
+                                    </div>
+                                    <div class="white-text">
+                                        ARTIST: {{artists.[0].name}}
+                                    </div>
+                                    <div class="white-text">
+                                        ALBUM: {{album.name}}
+                                    </div>
+                                    <div class="margin-top-20">
+                                        <audio controls>
+                                            <source src="{{preview_url}}" type="audio/mpeg">
+                                        </audio>
+                                    </div>
+                                </div>
+                            </script>
+                            <!--/Single Result-->
                         </div>
                     </div>
-                </script>
-                <!--/Single Result-->
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="black-background radius-5 padding-20">
+                        <h3 class="white-text text-center">SHOWING TOP 5 RESULTS</h3>
+                        <h5 class="white-text text-center display-for"></h5>
+
+                        <div id="soundcloud-results">
+                            <!--Single Result-->
+                            <script id="soundcloud-template" type="text/x-handlebars-template">
+                                <div class="margin-top-20">
+                                    <div class="white-text">
+                                        TITLE: {{title}}
+                                    </div>
+                                    <div class="white-text">
+                                        ARTIST: {{user.username}}
+                                    </div>
+                                    <div class="margin-top-20">
+                                        <iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=false&url={{uri}}&show_artwork=false&auto_play=false"></iframe>
+                                    </div>
+                                </div>
+                            </script>
+                            <!--/Single Result-->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

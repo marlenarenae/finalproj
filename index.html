@@ -1,132 +1,62 @@
 <!DOCTYPE html>
 <html>
-​
-<head>
-	<title>Music Carousel</title>
-	<meta charset="utf8" />
-	 
-	<link rel="stylesheet" href="libraries/bootstrap/css/bootstrap.css" />
-     <!-- Font Awesome CSS -->
+    <head>
+        <meta charset="utf-8">
+        <title>Music Carousel</title>
 
-	<link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-	<script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="style.css" />
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+        <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
-	<script src="https://rawgit.com/arsood/handlejs/master/handle.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
-    <!-- Custom JavaScript -->
-    <script src="app.js"></script>
-   
+        <script src="https://rawgit.com/arsood/handlejs/master/handle.js"></script>
 
-</head>
-​
-<body class="full-background">
-​
-<div id="container"></div>
-​
-<!--Search Page-->
-<div id="search-input-box" class="border-radius">
-	<h2 class="txt-center">Search for Music</h2>
-​
-	<div class="row">
-		<div class="col-sm-12">
-			<input id="song-title" class="form-control" type="text" placeholder="Search Song" />
-		</div>
-	</div>
-​
-	<div class="row">
-		<div class="col-sm-12 txt-center">
-			<button id="search-button" class="btn btn-primary margin-top-20">Search</button>
-			
-			
-		
-		</div>
-	</div>
-</div>
-<!--/Search Page-->
+        <script src="app.js"></script>
+    </head>
+    <body class="full-background">
 
-<div id="song-container"></div>
+        <h2 class="white-text text-center">SEARCH FOR MUSIC</h2>
 
-<!--Results-->
-​<!-- <script id="song-template" type="text/x-handlebars-template"> -->
-<div class="row">
-	<div class="col-sm-12 txt-center">
-	<div id="results" class="txt-center"><h3>Showing top 5 results for <span id='songID'></span></h3>
+        <div class="container small-container">
+            <input id="song-search" type="text" class="form-control" placeholder="Please enter a song title" />
+        </div>
 
-		<div class="col-sm-8">
-				<h3 style="margin-top:0;"><span id='song-name'></span></h3>
+        <div class="margin-top-20 text-center">
+            <button id="search-submit" class="btn btn-primary" type="button">Search</button>
+        </div>
 
-				<div class="row margin-top-20">
-					<div class="col-sm-4">
-						<strong >Title: </strong><span id='song-name-1'></span>
-					<div>
-						<strong >Artist: </strong><span id='artist-name-1'></span>
-					<div>
-						<strong >Album: </strong><span id='album-name-1'></span>
-					<div><audio controls>
-					  <source id="song-1" src="">
-					</div></div></audio>
+        <div id="results-container" class="container small-container margin-top-20 black-background radius-5">
+            <h3 class="white-text text-center">SHOWING TOP 5 RESULTS</h3>
+            <h5 id="display-for" class="white-text text-center"></h5>
 
-					<div class="col-sm-4">
-					<strong >Title: </strong><span id='song-name-2'></span>
-					<div>
-						<strong >Artist: </strong><span id='artist-name-2'></span>
-					
-					<div>
-						<strong >Album: </strong><span id='album-name-2'></span>
-					<div><audio controls>
-					  <source id="song-2" src="">
-					</div></div></audio>
+            <div id="spotify-results">
+                <!--Single Result-->
+                <script id="spotify-template" type="text/x-handlebars-template">
+                    <div class="margin-top-20">
+                        <div class="white-text">
+                            TITLE: {{name}}
+                        </div>
+                        <div class="white-text">
+                            ARTIST: {{artists.[0].name}}
+                        </div>
+                        <div class="white-text">
+                            ALBUM: {{album.name}}
+                        </div>
+                        <div class="margin-top-20">
+                            <audio controls>
+                                <source src="{{preview_url}}" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </div>
+                </script>
+                <!--/Single Result-->
+            </div>
+        </div>
 
-					<div class="col-sm-4">
-					<strong >Title: </strong><span id='song-name-3'></span>
-					<div>
-						<strong >Artist: </strong><span id='artist-name-3'></span>
-				
-					<div>
-						<strong >Album: </strong><span id='album-name-3'></span>
-					<div><audio controls>
-					  <source id="song-3" src="">
-					</div></div></audio>
-
-					<div class="col-sm-4">
-					<strong >Title: </strong><span id='song-name-4'></span>
-					<div>
-						<strong >Artist: </strong><span id='artist-name-4'></span>
-					
-					<div>
-						<strong >Album: </strong><span id='album-name-4'></span>
-				<div><audio controls>
-					  <source id="song-4" src="">
-					</div></div></audio>
-
-					<div class="col-sm-4">
-					<strong >Title: </strong><span id='song-name-5'></span>
-					<div>
-						<strong >Artist: </strong><span id='artist-name-5'></span>
-					
-					<div>
-						<strong >Album: </strong><span id='album-name-5'></span>
-					<div><audio controls>
-					  <source id="song-5" src="">
-					</div></div></audio>
-					
-					
-					  
-					</audio>
-					</div>				
-				</div>
-
-	
-			</div>
-		</div>
-	</div>
-​</div>
-
-
-</body>
-​
+    </body>
 </html>
